@@ -13,7 +13,7 @@ SEED = 8
 W, H = 900, 200
 TITLE = "SPACE WAR"
 MARKER_LAT, MARKER_LON = 9.9, 76.3        # your city (red pulsing dot on the globe)
-EARTH_X, EARTH_Y, EARTH_R = 375, 100, 34
+EARTH_X, EARTH_Y, EARTH_R = W // 2, 100, 34
 FLEET, ENEMIES = 3, 3                      # fighters per side
 OUT = "war.svg"
 # ---------------------------------------------
@@ -105,7 +105,7 @@ mother = (f'<g><animateTransform attributeName="transform" type="translate" valu
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{TITLE}">
 <rect width="{W}" height="{H}" fill="#000"/>
 {stars}
-<text x="{W/2}" y="22" text-anchor="middle" font-family="Courier New, monospace" font-size="13" letter-spacing="12" fill="#8a8a8a">{TITLE}</text>
+<text x="{W/2+6}" y="22" text-anchor="middle" font-family="Courier New, monospace" font-size="13" letter-spacing="12" fill="#8a8a8a">{TITLE}</text>
 {earth()}
 {lasers}
 {mother}{foes}{fleet}
